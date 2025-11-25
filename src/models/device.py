@@ -1,4 +1,4 @@
-from .server import Server
+from .server import Server  # This should work now with the package structure
 
 class Device(Server):
     """
