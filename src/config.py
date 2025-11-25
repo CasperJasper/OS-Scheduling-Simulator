@@ -33,5 +33,5 @@ ENERGY_CONFIGS = {
 SCENARIOS = {
     1: {"battery": "high", "wireless": "fast", "workload": "mixed"},
     2: {"battery": "high", "wireless": "fast", "workload": "large_tasks"},
-    # ... define all 6 scenarios
+    # to be define all 6 scenarios
 }
