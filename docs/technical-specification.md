@@ -16,3 +16,17 @@
 
 ## 2. Class Diagrams
 ### 2.1 Core Models
+
+# Class Diagram:
+# Task ──────┬───── Server ────── Device
+# │ │ │
+# │ │ │
+# PriorityQueue │ BatteryManager
+# │
+# EdgeServer ─── CloudServer
+
+### 3. Algorithm Specifications
+#### 3.1 Static Offloading Policy
+```python
+IF task.size > THRESHOLD THEN offload_to_edge
+ELSE execute_locally
