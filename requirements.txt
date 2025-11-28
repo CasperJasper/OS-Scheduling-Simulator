@@ -1,0 +1,18 @@
+# OS Scheduling Simulator - COMP3320 Final Project
+# Core dependencies for running the simulation and generating visualizations
+
+# Data analysis and numerical computing
+numpy>=1.21.0
+pandas>=1.3.0
+
+# Data visualization
+matplotlib>=3.5.0
+
+# Optional: For better-looking plots
+seaborn>=0.11.0
+
+# Optional: For progress bars during scenario execution
+tqdm>=4.60.0
+
+# Development dependencies (not required for running, but useful for development)
+# pip install -r requirements.txt
