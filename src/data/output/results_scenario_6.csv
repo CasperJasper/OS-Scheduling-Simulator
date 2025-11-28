@@ -1,0 +1,12 @@
+Metric,Value
+Scenario_ID,6
+Scenario_Name,"High Battery, Slow Wireless, Many Small Tasks"
+Makespan,35.00
+Total_Energy_Consumed,10.10
+Battery_Remaining,989.90
+Offload_Percentage,95.00
+Local_Tasks,1
+Remote_Tasks,19
+Wireless_Speed,slow
+Battery_Level,high
+Workload_Type,many_small

@@ -2,52 +2,46 @@
   {
     "scenario_id": 1,
     "scenario_name": "High Battery, Fast Wireless, Mixed Workload",
-    "makespan": 92.60000000000001,
-    "total_energy_consumed": 34.2,
+    "makespan": 97.25,
+    "total_energy_consumed": 19.299999999999997,
     "offload_stats": {
-      "local": 3,
-      "remote": 17,
-      "percentage_offloaded": 85.0
+      "local": 2,
+      "remote": 18,
+      "percentage_offloaded": 90.0
     },
     "queue_stats": {
       "device": {
-        "avg_wait_time": 20.333333333333332,
+        "avg_wait_time": 9.5,
         "max_queue_length": 0,
-        "tasks_processed": 3
+        "tasks_processed": 2
       },
       "EdgeServer1": {
-        "avg_wait_time": 16.2,
-        "max_queue_length": 0,
-        "tasks_processed": 5
-      },
-      "EdgeServer2": {
-        "avg_wait_time": 24.5,
+        "avg_wait_time": 18.833333333333336,
         "max_queue_length": 0,
         "tasks_processed": 4
       },
+      "EdgeServer2": {
+        "avg_wait_time": 31.0,
+        "max_queue_length": 0,
+        "tasks_processed": 6
+      },
       "CloudServer": {
-        "avg_wait_time": 35.55,
+        "avg_wait_time": 35.5375,
         "max_queue_length": 0,
         "tasks_processed": 8
       }
     },
-    "battery_remaining": 965.8,
+    "battery_remaining": 980.6999999999999,
     "tasks_processed": 20,
     "wireless_speed": "fast",
     "battery_level": "high",
-    "workload_type": "mixed",
-    "task_distribution": {
-      "CloudServer": 8,
-      "EdgeServer2": 4,
-      "EdgeServer1": 5,
-      "LocalDevice": 3
-    }
+    "workload_type": "mixed"
   },
   {
     "scenario_id": 2,
     "scenario_name": "High Battery, Fast Wireless, Many Large Tasks",
-    "makespan": 227.50000000000003,
-    "total_energy_consumed": 46.4,
+    "makespan": 271.75,
+    "total_energy_consumed": 63.199999999999996,
     "offload_stats": {
       "local": 1,
       "remote": 19,
@@ -60,51 +54,83 @@
         "tasks_processed": 1
       },
       "EdgeServer1": {
-        "avg_wait_time": 57.77777777777778,
+        "avg_wait_time": 72.0,
         "max_queue_length": 0,
         "tasks_processed": 3
       },
       "EdgeServer2": {
-        "avg_wait_time": 82.15,
+        "avg_wait_time": 91.2,
         "max_queue_length": 0,
         "tasks_processed": 5
       },
       "CloudServer": {
-        "avg_wait_time": 103.46363636363635,
+        "avg_wait_time": 117.9909090909091,
         "max_queue_length": 0,
         "tasks_processed": 11
       }
     },
-    "battery_remaining": 953.6,
+    "battery_remaining": 936.8,
     "tasks_processed": 20,
     "wireless_speed": "fast",
     "battery_level": "high",
-    "workload_type": "many_large",
-    "task_distribution": {
-      "CloudServer": 11,
-      "EdgeServer2": 5,
-      "EdgeServer1": 3,
-      "LocalDevice": 1
-    }
+    "workload_type": "many_large"
   },
   {
     "scenario_id": 3,
     "scenario_name": "High Battery, Slow Wireless, Mixed Workload",
-    "makespan": 86.7,
-    "total_energy_consumed": 25.3,
+    "makespan": 91.69999999999999,
+    "total_energy_consumed": 26.4,
     "offload_stats": {
-      "local": 2,
-      "remote": 18,
-      "percentage_offloaded": 90.0
+      "local": 3,
+      "remote": 17,
+      "percentage_offloaded": 85.0
     },
     "queue_stats": {
       "device": {
-        "avg_wait_time": 15.0,
+        "avg_wait_time": 11.333333333333334,
         "max_queue_length": 0,
-        "tasks_processed": 2
+        "tasks_processed": 3
       },
       "EdgeServer1": {
-        "avg_wait_time": 18.083333333333336,
+        "avg_wait_time": 26.6,
+        "max_queue_length": 0,
+        "tasks_processed": 5
+      },
+      "EdgeServer2": {
+        "avg_wait_time": 22.125,
+        "max_queue_length": 0,
+        "tasks_processed": 4
+      },
+      "CloudServer": {
+        "avg_wait_time": 39.6125,
+        "max_queue_length": 0,
+        "tasks_processed": 8
+      }
+    },
+    "battery_remaining": 973.6,
+    "tasks_processed": 20,
+    "wireless_speed": "slow",
+    "battery_level": "high",
+    "workload_type": "mixed"
+  },
+  {
+    "scenario_id": 4,
+    "scenario_name": "Low Battery, Fast Wireless, Mixed Workload",
+    "makespan": 90.9,
+    "total_energy_consumed": 36.9,
+    "offload_stats": {
+      "local": 3,
+      "remote": 17,
+      "percentage_offloaded": 85.0
+    },
+    "queue_stats": {
+      "device": {
+        "avg_wait_time": 33.0,
+        "max_queue_length": 0,
+        "tasks_processed": 3
+      },
+      "EdgeServer1": {
+        "avg_wait_time": 18.5,
         "max_queue_length": 0,
         "tasks_processed": 4
       },
@@ -114,28 +140,22 @@
         "tasks_processed": 5
       },
       "CloudServer": {
-        "avg_wait_time": 36.577777777777776,
+        "avg_wait_time": 39.6125,
         "max_queue_length": 0,
-        "tasks_processed": 9
+        "tasks_processed": 8
       }
     },
-    "battery_remaining": 974.7,
+    "battery_remaining": 63.10000000000001,
     "tasks_processed": 20,
-    "wireless_speed": "slow",
-    "battery_level": "high",
-    "workload_type": "mixed",
-    "task_distribution": {
-      "CloudServer": 9,
-      "EdgeServer2": 5,
-      "EdgeServer1": 4,
-      "LocalDevice": 2
-    }
+    "wireless_speed": "fast",
+    "battery_level": "low",
+    "workload_type": "mixed"
   },
   {
-    "scenario_id": 4,
-    "scenario_name": "Low Battery, Fast Wireless, Mixed Workload",
-    "makespan": 86.5,
-    "total_energy_consumed": 36.6,
+    "scenario_id": 5,
+    "scenario_name": "Low Battery, Slow Wireless, Mixed Workload",
+    "makespan": 85.75,
+    "total_energy_consumed": 33.0,
     "offload_stats": {
       "local": 3,
       "remote": 17,
@@ -143,87 +163,37 @@
     },
     "queue_stats": {
       "device": {
-        "avg_wait_time": 20.333333333333332,
+        "avg_wait_time": 14.333333333333334,
         "max_queue_length": 0,
         "tasks_processed": 3
       },
       "EdgeServer1": {
-        "avg_wait_time": 28.93333333333333,
+        "avg_wait_time": 27.8,
         "max_queue_length": 0,
         "tasks_processed": 5
       },
       "EdgeServer2": {
-        "avg_wait_time": 32.5625,
+        "avg_wait_time": 23.75,
         "max_queue_length": 0,
         "tasks_processed": 4
       },
       "CloudServer": {
-        "avg_wait_time": 34.4375,
+        "avg_wait_time": 31.8125,
         "max_queue_length": 0,
         "tasks_processed": 8
       }
     },
-    "battery_remaining": 63.39999999999999,
-    "tasks_processed": 20,
-    "wireless_speed": "fast",
-    "battery_level": "low",
-    "workload_type": "mixed",
-    "task_distribution": {
-      "CloudServer": 8,
-      "EdgeServer2": 4,
-      "EdgeServer1": 5,
-      "LocalDevice": 3
-    }
-  },
-  {
-    "scenario_id": 5,
-    "scenario_name": "Low Battery, Slow Wireless, Mixed Workload",
-    "makespan": 79.7,
-    "total_energy_consumed": 16.7,
-    "offload_stats": {
-      "local": 1,
-      "remote": 19,
-      "percentage_offloaded": 95.0
-    },
-    "queue_stats": {
-      "device": {
-        "avg_wait_time": 0.0,
-        "max_queue_length": 0,
-        "tasks_processed": 1
-      },
-      "EdgeServer1": {
-        "avg_wait_time": 29.142857142857142,
-        "max_queue_length": 0,
-        "tasks_processed": 7
-      },
-      "EdgeServer2": {
-        "avg_wait_time": 20.35,
-        "max_queue_length": 0,
-        "tasks_processed": 5
-      },
-      "CloudServer": {
-        "avg_wait_time": 34.199999999999996,
-        "max_queue_length": 0,
-        "tasks_processed": 7
-      }
-    },
-    "battery_remaining": 83.3,
+    "battery_remaining": 67.0,
     "tasks_processed": 20,
     "wireless_speed": "slow",
     "battery_level": "low",
-    "workload_type": "mixed",
-    "task_distribution": {
-      "EdgeServer2": 5,
-      "CloudServer": 7,
-      "EdgeServer1": 7,
-      "LocalDevice": 1
-    }
+    "workload_type": "mixed"
   },
   {
     "scenario_id": 6,
     "scenario_name": "High Battery, Slow Wireless, Many Small Tasks",
-    "makespan": 35.7,
-    "total_energy_consumed": 8.9,
+    "makespan": 35.0,
+    "total_energy_consumed": 10.1,
     "offload_stats": {
       "local": 1,
       "remote": 19,
@@ -236,31 +206,25 @@
         "tasks_processed": 1
       },
       "EdgeServer1": {
-        "avg_wait_time": 11.75,
+        "avg_wait_time": 8.4,
         "max_queue_length": 0,
-        "tasks_processed": 4
+        "tasks_processed": 5
       },
       "EdgeServer2": {
-        "avg_wait_time": 9.7,
+        "avg_wait_time": 11.95,
         "max_queue_length": 0,
         "tasks_processed": 5
       },
       "CloudServer": {
-        "avg_wait_time": 13.74,
+        "avg_wait_time": 11.288888888888886,
         "max_queue_length": 0,
-        "tasks_processed": 10
+        "tasks_processed": 9
       }
     },
-    "battery_remaining": 991.1,
+    "battery_remaining": 989.9,
     "tasks_processed": 20,
     "wireless_speed": "slow",
     "battery_level": "high",
-    "workload_type": "many_small",
-    "task_distribution": {
-      "CloudServer": 10,
-      "EdgeServer2": 5,
-      "EdgeServer1": 4,
-      "LocalDevice": 1
-    }
+    "workload_type": "many_small"
   }
 ]

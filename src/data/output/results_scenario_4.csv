@@ -1,0 +1,12 @@
+Metric,Value
+Scenario_ID,4
+Scenario_Name,"Low Battery, Fast Wireless, Mixed Workload"
+Makespan,90.90
+Total_Energy_Consumed,36.90
+Battery_Remaining,63.10
+Offload_Percentage,85.00
+Local_Tasks,3
+Remote_Tasks,17
+Wireless_Speed,fast
+Battery_Level,low
+Workload_Type,mixed

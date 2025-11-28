@@ -87,6 +87,41 @@ class ScenarioRunner:
 
         return device, all_servers, wireless_speeds[wireless_speed]
 
+    def save_individual_scenario_files(self, scenario_id: int, tasks: List[Task], results: Dict[str, Any]):
+        """Save individual scenario task files and results"""
+        # Save task definitions for this scenario
+        tasks_file = os.path.join(self.output_dir, f"scenario_{scenario_id}_tasks.json")
+        tasks_data = []
+        for task in tasks:
+            tasks_data.append({
+                'task_id': task.id,
+                'size': task.size,
+                'priority': task.priority,
+                'data_size': task.data_size,
+                'arrival_time': task.arrival_time
+            })
+
+        with open(tasks_file, 'w') as f:
+            json.dump(tasks_data, f, indent=2)
+
+        # Save individual CSV results for this scenario
+        csv_file = os.path.join(self.output_dir, f"results_scenario_{scenario_id}.csv")
+        import csv
+        with open(csv_file, 'w', newline='') as f:
+            writer = csv.writer(f)
+            writer.writerow(['Metric', 'Value'])
+            writer.writerow(['Scenario_ID', results['scenario_id']])
+            writer.writerow(['Scenario_Name', results['scenario_name']])
+            writer.writerow(['Makespan', f"{results['makespan']:.2f}"])
+            writer.writerow(['Total_Energy_Consumed', f"{results['total_energy_consumed']:.2f}"])
+            writer.writerow(['Battery_Remaining', f"{results['battery_remaining']:.2f}"])
+            writer.writerow(['Offload_Percentage', f"{results['offload_stats']['percentage_offloaded']:.2f}"])
+            writer.writerow(['Local_Tasks', results['offload_stats']['local']])
+            writer.writerow(['Remote_Tasks', results['offload_stats']['remote']])
+            writer.writerow(['Wireless_Speed', results['wireless_speed']])
+            writer.writerow(['Battery_Level', results['battery_level']])
+            writer.writerow(['Workload_Type', results['workload_type']])
+
     def run_scenario(self, scenario_id: int, scenario_config: Dict[str, Any]) -> Dict[str, Any]:
         """
         Run a single scenario and collect metrics
@@ -107,10 +142,6 @@ class ScenarioRunner:
         # Create workload
         tasks = self.create_workload(scenario_config['workload'])
 
-        print(f"  Created {len(tasks)} tasks")
-        print(f"  Device battery: {device.remaining_battery}")
-        print(f"  Available servers: {[s.name for s in servers]}")
-
         # Create and run scheduler
         scheduler = ListScheduler(
             device,
@@ -119,15 +150,7 @@ class ScenarioRunner:
         )
 
         # Schedule all tasks
-        scheduled = scheduler.schedule_tasks(tasks)
-
-        # Debug: Show where tasks were scheduled
-        task_distribution = {}
-        for task, server in scheduled:
-            server_name = server.name
-            task_distribution[server_name] = task_distribution.get(server_name, 0) + 1
-
-        print(f"  Task distribution: {task_distribution}")
+        scheduler.schedule_tasks(tasks)
 
         # Process all queues to get completion times
         scheduler.process_all_queues()
@@ -153,9 +176,11 @@ class ScenarioRunner:
             'tasks_processed': len(tasks),
             'wireless_speed': scenario_config['wireless_speed'],
             'battery_level': scenario_config['battery'],
-            'workload_type': scenario_config['workload'],
-            'task_distribution': task_distribution  # Add for debugging
+            'workload_type': scenario_config['workload']
         }
+
+        # Save individual files for this scenario
+        self.save_individual_scenario_files(scenario_id, tasks, results)
 
         print(f"  Makespan: {makespan:.2f}, Energy: {total_energy_consumed:.2f}, "
               f"Offloaded: {offload_stats['percentage_offloaded']:.1f}%")

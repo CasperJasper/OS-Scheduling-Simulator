@@ -1,0 +1,142 @@
+[
+  {
+    "task_id": 0,
+    "size": 35,
+    "priority": 2,
+    "data_size": 6,
+    "arrival_time": 0
+  },
+  {
+    "task_id": 1,
+    "size": 121,
+    "priority": 3,
+    "data_size": 32,
+    "arrival_time": 0
+  },
+  {
+    "task_id": 2,
+    "size": 37,
+    "priority": 1,
+    "data_size": 2,
+    "arrival_time": 0
+  },
+  {
+    "task_id": 3,
+    "size": 134,
+    "priority": 3,
+    "data_size": 53,
+    "arrival_time": 0
+  },
+  {
+    "task_id": 4,
+    "size": 43,
+    "priority": 2,
+    "data_size": 1,
+    "arrival_time": 0
+  },
+  {
+    "task_id": 5,
+    "size": 87,
+    "priority": 3,
+    "data_size": 44,
+    "arrival_time": 0
+  },
+  {
+    "task_id": 6,
+    "size": 45,
+    "priority": 2,
+    "data_size": 16,
+    "arrival_time": 0
+  },
+  {
+    "task_id": 7,
+    "size": 101,
+    "priority": 3,
+    "data_size": 44,
+    "arrival_time": 0
+  },
+  {
+    "task_id": 8,
+    "size": 13,
+    "priority": 2,
+    "data_size": 5,
+    "arrival_time": 0
+  },
+  {
+    "task_id": 9,
+    "size": 85,
+    "priority": 1,
+    "data_size": 57,
+    "arrival_time": 0
+  },
+  {
+    "task_id": 10,
+    "size": 17,
+    "priority": 3,
+    "data_size": 19,
+    "arrival_time": 0
+  },
+  {
+    "task_id": 11,
+    "size": 128,
+    "priority": 3,
+    "data_size": 59,
+    "arrival_time": 0
+  },
+  {
+    "task_id": 12,
+    "size": 30,
+    "priority": 2,
+    "data_size": 3,
+    "arrival_time": 0
+  },
+  {
+    "task_id": 13,
+    "size": 82,
+    "priority": 1,
+    "data_size": 43,
+    "arrival_time": 0
+  },
+  {
+    "task_id": 14,
+    "size": 42,
+    "priority": 1,
+    "data_size": 1,
+    "arrival_time": 0
+  },
+  {
+    "task_id": 15,
+    "size": 102,
+    "priority": 1,
+    "data_size": 59,
+    "arrival_time": 0
+  },
+  {
+    "task_id": 16,
+    "size": 44,
+    "priority": 3,
+    "data_size": 2,
+    "arrival_time": 0
+  },
+  {
+    "task_id": 17,
+    "size": 144,
+    "priority": 2,
+    "data_size": 97,
+    "arrival_time": 0
+  },
+  {
+    "task_id": 18,
+    "size": 30,
+    "priority": 3,
+    "data_size": 13,
+    "arrival_time": 0
+  },
+  {
+    "task_id": 19,
+    "size": 91,
+    "priority": 2,
+    "data_size": 71,
+    "arrival_time": 0
+  }
+]
