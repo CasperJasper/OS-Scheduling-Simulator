@@ -250,42 +250,23 @@ class ScenarioRunner:
 
         return all_results
 
-    def save_results(self, results: list[Dict[str, Any]]):
-        """Simple save method that focuses on core metrics"""
+    def save_results(self, results: List[Dict[str, Any]]):
+        """Save results to JSON file"""
         output_file = os.path.join(self.output_dir, "scenario_results.json")
 
-        # Extract only the essential, serializable data
-        simple_results = []
+        # Convert to serializable format
+        serializable_results = []
         for result in results:
-            simple_result = {
-                'scenario_id': result['scenario_id'],
-                'scenario_name': result['scenario_name'],
-                'makespan': float(result['makespan']),
-                'total_energy_consumed': float(result['total_energy_consumed']),
-                'battery_remaining': float(result['battery_remaining']),
-                'tasks_processed': result['tasks_processed'],
-                'wireless_speed': result['wireless_speed'],
-                'battery_level': result['battery_level'],
-                'workload_type': result['workload_type'],
-                'offload_percentage': float(result['offload_stats']['percentage_offloaded']),
-                'local_tasks': result['offload_stats']['local'],
-                'remote_tasks': result['offload_stats']['remote']
-            }
-            simple_results.append(simple_result)
+            serializable_result = result.copy()
+            # Convert any non-serializable values
+            if 'offload_stats' in serializable_result:
+                serializable_result['offload_stats'] = dict(serializable_result['offload_stats'])
+            serializable_results.append(serializable_result)
 
-        try:
-            with open(output_file, 'w') as f:
-                json.dump(simple_results, f, indent=2)
+        with open(output_file, 'w') as f:
+            json.dump(serializable_results, f, indent=2)
 
-            print(f"✓ Results saved to: {output_file}")
-
-            # Verify content
-            with open(output_file, 'r') as f:
-                saved_data = json.load(f)
-                print(f"✓ Verified: {len(saved_data)} scenarios saved")
-
-        except Exception as e:
-            print(f"✗ Error saving results: {e}")
+        print(f"Results saved to: {output_file}")
 
 
 # For standalone execution
