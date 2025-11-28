@@ -6,8 +6,8 @@ setup(
     package_dir={"": "src"},
     packages=find_packages(where="src"),
     description="OS Scheduling Simulator for COMP3320 Final Project",
-    author="Your Team Name",
-    author_email="your.team@email.com",
+    author="Shardia Gregory, Varyl Browne, Qadash Charles, Kemier Franics",
+    author_email="500001139@my.fiveislands.uwi.edu ",
     python_requires=">=3.6",
     install_requires=[
         "matplotlib>=3.5.0",

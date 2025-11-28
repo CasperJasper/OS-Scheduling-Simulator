@@ -1,6 +1,7 @@
+# noinspection PyProtectedMember
+from pip._internal.cli.cmdoptions import python
 
-### **3. Configuration File** (`src/config.py`)
-```python
+repr(python)
 """
 Configuration settings for the scheduling simulator
 """
