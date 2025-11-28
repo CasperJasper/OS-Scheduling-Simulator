@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-ALL-IN-ONE TEST FILE - No imports needed!
+ALL-IN-ONE TEST FILE
 Contains all classes in one file for testing
 """
 

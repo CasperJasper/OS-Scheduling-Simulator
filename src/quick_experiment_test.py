@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Quick test for the experiments package - UPDATED
+Quick test for the experiments package
 """
 
 import sys
@@ -15,7 +15,7 @@ try:
     from experiments.scenario_runner import ScenarioRunner
     from experiments.results_plotter import ResultsPlotter
 
-    print("✓ Experiments package imports successful!")
+    print("Experiments package imports successful!")
 
     # Test with a more balanced scenario
     runner = ScenarioRunner()
@@ -39,15 +39,15 @@ try:
     print(f"  Local tasks: {result['offload_stats']['local']}")
     print(f"  Remote tasks: {result['offload_stats']['remote']}")
 
-    # Check if we have a good balance
+    # Check if there's a good balance
     offload_percentage = result['offload_stats']['percentage_offloaded']
     if 20 <= offload_percentage <= 80:  # Reasonable offloading range
-        print("✓ Good offloading balance achieved!")
+        print("Good offloading balance achieved!")
     else:
-        print("⚠ Offloading might be too aggressive or conservative")
+        print("Offloading might be too aggressive or conservative")
 
 except Exception as e:
-    print(f"✗ Experiments test failed: {e}")
+    print(f"Experiments test failed: {e}")
     import traceback
 
     traceback.print_exc()

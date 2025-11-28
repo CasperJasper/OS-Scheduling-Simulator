@@ -6,7 +6,7 @@ Basic test to verify our core models and scheduling work
 import sys
 import os
 
-# Add the src directory to Python path (NOT the root)
+# Add the src directory to Python path
 src_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'src')
 sys.path.insert(0, src_path)
 
