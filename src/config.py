@@ -30,9 +30,4 @@ ENERGY_CONFIGS = {
     "energy_per_compute_unit": 0.5
 }
 
-# Scenario Definitions
-SCENARIOS = {
-    1: {"battery": "high", "wireless": "fast", "workload": "mixed"},
-    2: {"battery": "high", "wireless": "fast", "workload": "large_tasks"},
-    # to be added/define all 6 scenarios at a later date
-}
+# Scenario Definitions removed. Already present in scenario_runner.py

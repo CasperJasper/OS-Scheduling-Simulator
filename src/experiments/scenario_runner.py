@@ -221,37 +221,37 @@ class ScenarioRunner:
         Run all 6 required test scenarios
         """
         scenarios = {
-            1: {
+            1: { #Scenario 1: Baseline - optimal conditions
                 'name': 'High Battery, Fast Wireless, Mixed Workload',
                 'battery': 'high',
                 'wireless_speed': 'fast',
                 'workload': 'mixed'
             },
-            2: {
+            2: { #Scenario 2: Tests handling of compute-heavy workloads
                 'name': 'High Battery, Fast Wireless, Many Large Tasks',
                 'battery': 'high',
                 'wireless_speed': 'fast',
                 'workload': 'many_large'
             },
-            3: {
+            3: { #Scenario 3: Tests impact of network delays on mixed workload
                 'name': 'High Battery, Slow Wireless, Mixed Workload',
                 'battery': 'high',
                 'wireless_speed': 'slow',
                 'workload': 'mixed'
             },
-            4: {
+            4: { #Scenario 4: Tests energy-constrained decisions with good network
                 'name': 'Low Battery, Fast Wireless, Mixed Workload',
                 'battery': 'low',
                 'wireless_speed': 'fast',
                 'workload': 'mixed'
             },
-            5: {
+            5: { #Scenario 5: Worst-case - both energy and network constrained
                 'name': 'Low Battery, Slow Wireless, Mixed Workload',
                 'battery': 'low',
                 'wireless_speed': 'slow',
                 'workload': 'mixed'
             },
-            6: {
+            6: { #Scenario 6: Tests many quick tasks with network limitations
                 'name': 'High Battery, Slow Wireless, Many Small Tasks',
                 'battery': 'high',
                 'wireless_speed': 'slow',
