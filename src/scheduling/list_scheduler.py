@@ -1,8 +1,7 @@
-from typing import List
-from ..models.task import Task
-from ..models.device import Device
-from ..models.server import Server
-from .offload_strategy import StaticOffloadStrategy, IntelligentOffloadStrategy
+from models.task import Task
+from models.device import Device
+from models.server import Server
+from scheduling.offload_strategy import StaticOffloadStrategy, IntelligentOffloadStrategy
 
 class ListScheduler:
     """
@@ -19,45 +18,62 @@ class ListScheduler:
             self.offload_strategy = StaticOffloadStrategy()
         else:  # intelligent
             self.offload_strategy = IntelligentOffloadStrategy()
-    
-    def schedule_tasks(self, tasks: List[Task], current_time=0):
+
+    def schedule_tasks(self, tasks: list[Task], current_time=0):
         """
         Schedule a list of tasks using the configured offloading strategy
         """
         scheduled_tasks = []
-        
+
         for task in tasks:
             # Make offloading decision
             target_server_name = self.offload_strategy.decide(
                 task, self.device, self.servers, current_time
             )
-            
+
             # Find the target server object
             target_server = self.find_server_by_name(target_server_name)
-            
+
             if target_server:
                 # Add task to the target server's queue
                 target_server.add_to_queue(task)
                 scheduled_tasks.append((task, target_server))
-                
+
                 # For local execution, consume energy immediately
-                if target_server_name == "local" and isinstance(target_server, Device):
-                    target_server.consume_energy(task)
+                if target_server == self.device:  # ← CHANGE: Compare objects, not names
+                    energy_consumed = self.device.consume_energy(task)
+                    if not energy_consumed:
+                        print(f"Warning: Task {task.id} scheduled locally but not enough energy!")
             else:
                 print(f"Warning: Could not find server {target_server_name} for task {task.id}")
-        
+
         self.assigned_tasks.extend(scheduled_tasks)
         return scheduled_tasks
-    
+
     def find_server_by_name(self, server_name):
         """Find a server by name (case-insensitive)"""
-        if server_name.lower() == "local":
+        server_name_lower = server_name.lower()
+
+        # Handle different naming variations
+        if server_name_lower == "local" or "local" in server_name_lower:
             return self.device
-        
+
         for server in self.servers:
-            if server_name.lower() in server.name.lower():
+            if server_name_lower in server.name.lower() or server.name.lower() in server_name_lower:
                 return server
-        
+
+        # If no exact match, try fuzzy matching
+        if "edge" in server_name_lower:
+            for server in self.servers:
+                if "edge" in server.name.lower():
+                    return server
+        elif "cloud" in server_name_lower:
+            for server in self.servers:
+                if "cloud" in server.name.lower():
+                    return server
+
+        print(
+            f"Debug: Could not find server '{server_name}'. Available: {[s.name for s in [self.device] + self.servers]}")
         return None
     
     def process_all_queues(self):
