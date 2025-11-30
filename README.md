@@ -4,18 +4,19 @@
 A simulator for modern OS scheduling in mobile edge and cloud environments, implementing intelligent task offloading with energy and communication constraints.
 
 ## Team Members
-- [Name 1] - [Role]
-- [Name 2] - [Role]
-- [Name 3] - [Role]
-- [Name 4] - [Role]
+- Shardia Gregory
+- Varyl Browne
+- Qadash Charles
+- Kemier Francis
+
 
 ## Features
-- ✅ Distributed priority-based queues
-- ✅ Static + Intelligent offloading policies
-- ✅ Heterogeneous compute speeds (Local/Edge/Cloud)
-- ✅ Energy-constrained scheduling
-- ✅ Communication delay simulation
-- ✅ 6 test scenarios with comprehensive metrics
+- Distributed priority-based queues
+- Static + Intelligent offloading policies
+- Heterogeneous compute speeds (Local/Edge/Cloud)
+- Energy-constrained scheduling
+- Communication delay simulation
+- 6 test scenarios with comprehensive metrics
 
 ## Quick Start
 ```bash
